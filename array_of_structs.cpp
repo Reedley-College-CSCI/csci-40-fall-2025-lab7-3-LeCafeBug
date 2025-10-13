@@ -6,17 +6,23 @@ using namespace std;
 
 // TODO: Step 1 - Define the struct TemperatureRecord
 // It should contain two integer fields: day and temperature.
-
+struct TemperatureRecord
+{
+    int day;
+    int temperature;
+};
 
 // Constants
 const int MAX_DAYS = 31;
 
 // Function Prototypes
-void readTemperatures(???); // TODO: Fix the parameters
+void readTemperatures(??); // TODO: Fix the parameters
 void printTemperatures(const ???);
 TemperatureRecord findMin(const ???);
 TemperatureRecord findMax(const ???);
 double findAverage(const ???);
+
+TemperatureRecord [MAX_DAYS];
 
 int main() {
     // TODO: Step 2 - Declare an array of TemperatureRecord structs (MAX_DAYS size)
