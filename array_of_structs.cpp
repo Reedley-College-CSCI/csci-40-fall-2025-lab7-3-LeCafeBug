@@ -17,7 +17,7 @@ const int MAX_DAYS = 31;
 
 // Function Prototypes
 void readTemperatures(int day, int temperature); // TODO: Fix the parameters
-void printTemperatures(const ???);
+void printTemperatures(const TemperatureRecord DayAndTemp[], int size);
 TemperatureRecord findMin(const ???);
 TemperatureRecord findMax(const ???);
 double findAverage(const ???);
@@ -33,10 +33,8 @@ int main() {
     readTemperatures(day, temperature);
 
     // TODO: Step 4 - Print the temperatures
-    for (int i = 0; i < SIZE) {
-        cout << << endl;
+   printTemperatures(DayAndTemp, size);
 
-    }
     // TODO: Step 5 - Compute and display min, max, and average temperature
 
     return 0;
@@ -60,7 +58,12 @@ void readTemperatures(int day, int temperature)
 
 // TODO: Step 7 - Implement printTemperatures()
 // Print all stored temperatures in a formatted table
-
+void printTemperatures(const TemperatureRecord DayAndTemp[], int size) {
+    cout << "Day   Temp" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << DayAndTemp[i].day << "   " << DayAndTemp[i].temperature << endl;
+    }
+}
 // TODO: Step 8 - Implement findMin()
 // Return the TemperatureRecord with the lowest temperature
 
