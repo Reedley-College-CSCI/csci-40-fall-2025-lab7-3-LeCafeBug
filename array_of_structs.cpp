@@ -20,7 +20,7 @@ void readTemperatures(int day, int temperature); // TODO: Fix the parameters
 void printTemperatures(const TemperatureRecord DayAndTemp[], int size);
 TemperatureRecord findMin(const ???);
 TemperatureRecord findMax(const ???);
-double findAverage(const ???);
+double findAverage(const DayAndTemp[], int size);
 
 TemperatureRecord DayAndTemp [MAX_DAYS];
 
@@ -33,9 +33,10 @@ int main() {
     readTemperatures(day, temperature);
 
     // TODO: Step 4 - Print the temperatures
-   printTemperatures(DayAndTemp, size);
+    printTemperatures(DayAndTemp, size);
 
-    // TODO: Step 5 - Compute and display min, max, and average temperature
+    // TODO: Step - Compute and display min, max, and average temperature
+    findAverage(DayAndTemp, size);
 
     return 0;
 }
@@ -54,6 +55,7 @@ void readTemperatures(int day, int temperature)
         file >> TemperatureRecord[count].temperature;
         count++ 
     }
+    file.close();
 }
 
 // TODO: Step 7 - Implement printTemperatures()
@@ -72,3 +74,10 @@ void printTemperatures(const TemperatureRecord DayAndTemp[], int size) {
 
 // TODO: Step 10 - Implement findAverage()
 // Compute and return the average temperature
+double findAverage(const TemperatureRecord DayAndTemp[], int size) {
+    double total = 0
+    for (double i = 0; i < size; i++){
+        total += DayAndTemp[i].temperature;
+    }
+    return total / size;
+}
