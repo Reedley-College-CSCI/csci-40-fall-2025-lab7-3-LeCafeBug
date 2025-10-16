@@ -18,9 +18,9 @@ const int MAX_DAYS = 31;
 // Function Prototypes
 void readTemperatures(int day, int temperature); // TODO: Fix the parameters
 void printTemperatures(const TemperatureRecord DayAndTemp[], int size);
-TemperatureRecord findMin(const ???);
-TemperatureRecord findMax(const ???);
-double findAverage(const DayAndTemp[], int size);
+TemperatureRecord findMin(const TemperatureRecord DayAndTemp[], int size);
+TemperatureRecord findMax(const TemperatureRecord DayAndTemp[], int size);
+double findAverage(const TemperatureRecord DayAndTemp[], int size);
 
 TemperatureRecord DayAndTemp [MAX_DAYS];
 
@@ -37,6 +37,9 @@ int main() {
 
     // TODO: Step - Compute and display min, max, and average temperature
     findAverage(DayAndTemp, size);
+    
+    TemperatureRecord min = findmin(DayAndTemp, size);
+    TemperatureRecord max = findMax(DayAndTemp, size);
 
     return 0;
 }
@@ -68,9 +71,29 @@ void printTemperatures(const TemperatureRecord DayAndTemp[], int size) {
 }
 // TODO: Step 8 - Implement findMin()
 // Return the TemperatureRecord with the lowest temperature
+TemperatureRecord findMin(const TemperatureRecord DayAndTemp[], int size);{
+    TemperatureRecord min = DayAndTemp[0]
+    for (int i = 0; i < size; i++){
+        if (DayAndTemp[i].temperature < min.temperature){
+            min = DayAndTemp[i].temperature;
+        }
+    }
+
+     cout << "The lowest temperature is on day: " << DayAndTemp[i].day << " with a temperature of: " << min << endl;
+}
 
 // TODO: Step 9 - Implement findMax()
 // Return the TemperatureRecord with the highest temperature
+TemperatureRecord findMax(const TemperatureRecord DayAndTemp[], int size);{
+    TemperatureRecord max = DayAndTemp[0]
+    for (int i = 0; i < size; i++){
+        if (DayAndTemp[i].temperature > max.temperature){
+            max = DayAndTemp[i].temperature;
+        }
+    }
+
+    cout << "The max temperature is on day: " << DayAndTemp[i].day << " with a temperature of: " << max << endl;
+}
 
 // TODO: Step 10 - Implement findAverage()
 // Compute and return the average temperature
@@ -79,5 +102,5 @@ double findAverage(const TemperatureRecord DayAndTemp[], int size) {
     for (double i = 0; i < size; i++){
         total += DayAndTemp[i].temperature;
     }
-    return total / size;
+    cout << "The average temperature is " << total / size << endl;
 }
